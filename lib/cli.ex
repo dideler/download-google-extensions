@@ -10,8 +10,8 @@ defmodule DownloadGoogleExtensions.CLI do
 
       -h, --help        # Shows this help and exits
       -v, --version     # Shows the program version and exits
-      -p, --parallel    # Downloads extensions in parellel (default behaviour)
-      -s, --sequential  # Downloads extensions sequentially (slower than parallel but more likely to succeed)
+      -p, --parallel    # Downloads extensions in parallel (default behaviour)
+      -s, --sequential  # Downloads extensions sequentially
           --serial      # Synonym for --sequential
   """
 
