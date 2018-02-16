@@ -92,12 +92,12 @@ defmodule DownloadGoogleExtensions.CLI do
 
   defp download_extensions({name, id}) do
     opts = [cd: "extensions", stderr_to_stdout: true]
-    {_, 0} = System.cmd("mkdir", ["-p", "extensions"])
-    {_, 0} = System.cmd("curl", ["--silent", "--output", "_#{name}.zip", "--location", url(id)], opts)
-    {_, 0} = System.cmd("zip", ["--fix", "_#{name}.zip", "--out", "#{name}.zip"], opts)
-    {_, 0} = System.cmd("unzip", ["-q", "-d", name, "#{name}.zip"], opts)
-    {_, 0} = System.cmd("rm", ["_#{name}.zip", "#{name}.zip"], opts)
-    IO.puts name
+    with {_, 0} <- System.cmd("mkdir", ["-p", "extensions"]),
+         {_, 0} <- System.cmd("curl", ["--silent", "--output", "_#{name}.zip", "--location", url(id)], opts),
+         {_, 0} <- System.cmd("zip", ["--fix", "_#{name}.zip", "--out", "#{name}.zip"], opts),
+         {_, 0} <- System.cmd("unzip", ["-q", "-d", name, "#{name}.zip"], opts),
+         {_, 0} <- System.cmd("rm", ["_#{name}.zip", "#{name}.zip"], opts),
+         do: IO.puts name
   end
 
   defp url(extension_id), do:
