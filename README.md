@@ -1,11 +1,13 @@
 # Download Google Extensions
 
-Downloads a bunch of Chrome Extensions by Google for learning purposes.
+<img width="958" alt="screen shot 2018-02-16 at 16 56 14" src="https://user-images.githubusercontent.com/497458/36321578-2bc024f6-1342-11e8-930d-88ee3a3d2b96.png">
+
+Downloads the source for a bunch of Chrome Extensions by Google for learning purposes.
 
 Gives you a rough idea of how some really good extensions are built.
-Note that you won't get the full picture, as the bundled version of an
-extension on the web store can be very different than the development
-version.
+Note that you won't necessarily get the full picture, as the bundled version of an
+extension on the web store can differ from the development version (e.g. minified
+source or development libraries not being bundled).
 
 ## Installation
 
